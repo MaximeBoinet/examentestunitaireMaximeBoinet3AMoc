@@ -1,13 +1,25 @@
 <?php
-namespace Lib;
+namespace lib;
 
 class StringFormatter {
-    private function concat($stringun, $stringdeux) {
+    public function concat($stringun, $stringdeux) {
         return $stringun + $stringdeux;
     }
 
-    private function toCamelCase($stringun, $stringdeux) {
-        return strtolower($stringun) + ucfirst(strtolower($stringdeux));
+    public function toCamelCase($stringun, $stringdeux) {
+        $str1 = explode(" ", $stringun);
+        $str2 = explode(" ", $stringdeux);
+        $res = array_shift(strtolower($str1));
+
+        foreach ($str1 as $value) {
+            $res += ucfirst(strtolower($value));
+        }
+
+        foreach ($str2 as $value) {
+            $res += ucfirst(strtolower($value));
+        }
+
+        return $res;
     }
 
     public function suffix($string, $suffix, $tcc) {
