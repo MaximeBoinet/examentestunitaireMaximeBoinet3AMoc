@@ -9,7 +9,7 @@ class StringFormatter {
     public function toCamelCase($stringun, $stringdeux) {
         $str1 = explode(" ", $stringun);
         $str2 = explode(" ", $stringdeux);
-        $res = array_shift(strtolower($str1));
+        $res = "";
 
         foreach ($str1 as $value) {
             $res += ucfirst(strtolower($value));
@@ -24,16 +24,16 @@ class StringFormatter {
 
     public function suffix($string, $suffix, $tcc) {
         if ($tcc)
-            return toCamelCase($string, $suffix);
+            return $this->toCamelCase($string, $suffix);
 
-        return concat($string, $suffix);
+        return $this->concat($string, $suffix);
     }
 
     public function prefix($string, $prefix, $tcc) {
         if ($tcc)
-            return toCamelCase($prefix, $string);
+            return $this->toCamelCase($prefix, $string);
 
-        return concat($prefix, $string);
+        return $this->concat($prefix, $string);
     }
 }
 ?>
