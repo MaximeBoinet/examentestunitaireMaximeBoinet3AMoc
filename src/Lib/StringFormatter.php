@@ -5,7 +5,7 @@ class StringFormatter
 {
     public function concat($stringun, $stringdeux)
     {
-        return $stringun + $stringdeux;
+        return $stringun . $stringdeux;
     }
 
     public function toCamelCase($stringun, $stringdeux)
@@ -15,11 +15,11 @@ class StringFormatter
         $res = "";
 
         foreach ($str1 as $value) {
-            $res += ucfirst(strtolower($value));
+            $res .= ucfirst(strtolower($value));
         }
 
         foreach ($str2 as $value) {
-            $res += ucfirst(strtolower($value));
+            $res .= ucfirst(strtolower($value));
         }
 
         return $res;
