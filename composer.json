@@ -1,0 +1,26 @@
+{
+    "name": "maxime/examentestunitaire-maxime-boinet3a-moc",
+    "type": "library",
+    "require": {
+        "phpunit/phpunit": "5.7.*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.3"
+    },
+    "authors": [
+        {
+            "name": "maximeboinet",
+            "email": "maximeboinet@live.com"
+        }
+    ],
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "autoload" : {
+        "psr-4" : {
+            "" : "src/"
+        }
+    }
+}
